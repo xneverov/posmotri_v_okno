@@ -4,20 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  block-size: 100%;
-}
-
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-}
-
 h1,
 h2,
 h3,
@@ -35,4 +21,261 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+html {
+  block-size: 100%;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: end;
+  gap: 30px;
+  inline-size: 1140px;
+}
+
+.result__video-container {
+  position: relative;
+  margin-block-end: 16px;
+  inline-size: 711px;
+  block-size: 386px;
+}
+
+.result__video {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  margin-block-end: 5px;
+  font-weight: 400;
+  font-size: inherit;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+  margin-block-end: 7px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  inline-size: fit-content;
+}
+
+.search-form__textfield {
+  border: 1px solid #fff;
+  border-inline-start: none;
+  border-inline-end: none;
+  padding: 2.5px 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: none;
+  appearance: none;
+  inline-size: 225px;
+}
+
+.search-form__textfield::placeholder {
+  opacity: 0.7;
+  color: #fff;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+/* .search-form__textfield:active {
+  border: 1px solid #fff;
+} */
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+.search-form__label:hover > .search-form__label-text {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
+  content: '';
+  background-color: #fff;
+  inline-size: 15px;
+  block-size: 15px;
+}
+
+.button {
+  border: 1px solid #fff;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  background: none;
+  cursor: pointer;
+  inline-size: 100%;
+  block-size: 34px;
+}
+
+.search-form__submit-button {
+  margin-block-end: 2px; /* Чтобы кнопки были на одном уровне, иначе это ад перфекциониста:) */
+}
+
+.more-button {
+  margin: 2px; /* Для корректного отображения рамки в фокусе */
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+
+button:active {
+  background-color: #545050;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative;
+  overflow: hidden auto; /* Скрытие горизонтального скролла, он появляется из-за фикса фокуса большой кнопки */
+  block-size: 298px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-block-end: 30px;
+}
+
+.content__card-link {
+  display: block;
+  margin: 2px;
+  padding: 2px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+}
+
+.content__video-card-description-container {
+  inline-size: 100%;
+}
+
+.content__video-card-title {
+  margin-block-end: 6px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  line-height: 0.9;
+}
+
+.content__video-card-thumbnail {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 194px;
+  block-size: 103px;
 }
